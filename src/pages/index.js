@@ -9,7 +9,7 @@ import Countries from "../components/CountriesTable/CountriesTable";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ countries }) {
-  console.log(countries);
+  // console.log(countries);
   return (
     <>
       <Layout>

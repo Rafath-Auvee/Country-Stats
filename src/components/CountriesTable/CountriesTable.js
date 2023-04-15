@@ -105,7 +105,7 @@ const CountriesTable = ({ countries }) => {
       </div>
 
       {orderedCountries.map((country) => (
-        <Link href={`/country/${country.name.official}`} className={styles.table} style={{ textDecoration: 'none' }}  key={country.name}>
+        <Link href={`/country/${country.name.common}`} className={styles.table} style={{ textDecoration: 'none' }}  key={country.name}>
           <div className={styles.row}>
             <div className={styles.flag}>
               <Image src={country.flags.svg} width={50} height={40} alt={country.name.common} />
