@@ -5,6 +5,7 @@ import {
 } from "@material-ui/icons";
 import { useState } from "react";
 import styles from "./CountriesTable.module.css";
+import Image from "next/image";
 
 const orderBy = (countries, value, direction) => {
   if (direction === "asc") {
@@ -95,11 +96,11 @@ const CountriesTable = ({ countries }) => {
 
         <button
           className={styles.heading_gini}
-          onClick={() => setValueAndDirection("gini")}
+          onClick={() => setValueAndDirection("capital")}
         >
-          <div>Gini</div>
+          <div>Capital</div>
 
-          {value === "gini" && <SortArrow direction={direction} />}
+          {value === "capital" && <SortArrow direction={direction} />}
         </button>
       </div>
 
@@ -107,9 +108,9 @@ const CountriesTable = ({ countries }) => {
         <Link href={`/country/${country.name.official}`} className={styles.table} style={{ textDecoration: 'none' }}  key={country.name}>
           <div className={styles.row}>
             <div className={styles.flag}>
-              <img src={country.flags.png} alt={country.name.official} />
+              <Image src={country.flags.svg} width={50} height={40} alt={country.name.common} />
             </div>
-            <div className={styles.name}>{country.name.official}</div>
+            <div className={styles.name}>{country.name.common}</div>
 
             <div className={styles.population}>{country.population}</div>
 
